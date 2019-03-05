@@ -1,0 +1,90 @@
+[
+    {
+        "cdEmail": "humberto.rjdh@gmail.com",
+        "firstName": "HUMBERTO",
+        "surName": "RAMIREZ",
+        "lastName": "JUAREZ",
+        "dsType": "0",
+        "swActive": "S"        
+    },
+    {
+        "cdEmail": "ePacheco.unsis@gmail.com",
+        "firstName": "EVERARDO",
+        "surName": "PACHECO",
+        "lastName": "PACHECO",
+        "dsType": "1",
+        "swActive": "N"        
+    },
+    {
+        "cdEmail": "brie.unsis@gmail.com",
+        "firstName": "BRIE",
+        "surName": "APPAT",
+        "lastName": "APMAT",
+        "dsType": "0",
+        "swActive": "S"        
+    },
+    {
+        "cdEmail": "flor.unsis@gmail.com",
+        "firstName": "FLOR",
+        "surName": "APPAT",
+        "lastName": "APMAT",
+        "dsType": "2",
+        "swActive": "S"        
+    },
+    {
+        "cdEmail": "eder.unsis@gmail.com",
+        "firstName": "EDER",
+        "surName": "APPAT",
+        "lastName": "APMAT",
+        "dsType": "2",
+        "swActive": "S"        
+    },
+    {
+        "cdEmail": "rolando.unsis@gmail.com",
+        "firstName": "ROlANDO",
+        "surName": "APPAT",
+        "lastName": "APMAT",
+        "dsType": "1",
+        "swActive": "S"        
+    },
+    {
+        "cdEmail": "gaby.unsis@gmail.com",
+        "firstName": "GABRIELA",
+        "surName": "PACHECO",
+        "lastName": "PACHECO",
+        "dsType": "1",
+        "swActive": "S"        
+    },
+    {
+        "cdEmail": "luis.unsis@gmail.com",
+        "firstName": "LUIS",
+        "surName": "APPAT",
+        "lastName": "APMAT",
+        "dsType": "1",
+        "swActive": "S"        
+    },
+    {
+        "cdEmail": "rolando1.unsis@gmail.com",
+        "firstName": "ROlANDO",
+        "surName": "APPAT",
+        "lastName": "APMAT",
+        "dsType": "1",
+        "swActive": "S"        
+    },
+    {
+        "cdEmail": "gaby1.unsis@gmail.com",
+        "firstName": "GABRIELA",
+        "surName": "PACHECO",
+        "lastName": "PACHECO",
+        "dsType": "1",
+        "swActive": "S"        
+    },
+    {
+        "cdEmail": "luis1.unsis@gmail.com",
+        "firstName": "LUIS",
+        "surName": "APPAT",
+        "lastName": "APMAT",
+        "dsType": "1",
+        "swActive": "S"        
+    }
+]

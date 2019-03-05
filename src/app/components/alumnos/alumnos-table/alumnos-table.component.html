@@ -1,0 +1,284 @@
+<div class="col-lg-12">
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-md-2">
+          <i class="fa fa-align-justify"></i> Alumnos
+        </div>
+        <div class="col-md-10">
+          <div class="form-group row">
+            <div class="col-md-3">
+              <div class="row">
+                <select class="form-control" name="nivel" id="licenciatura" (change)="updateFilter($event,1)">
+                  <option value="" disabled selected>Selecciona...</option>
+                  <option value="01">Enfermería</option>
+                  <option value="02">Nutrición</option>
+                  <option value="03">Ciencias Empresariales</option>
+                  <option value="04">Medicina</option>
+                  <option value="05">Odontología</option>
+                  <option value="06">Informática</option>
+                  <option value="07">Administración Municipal</option>
+                </select>
+                <small class="mx-auto">
+                  Licenciatura
+                </small>
+              </div>
+            </div>
+            <div class="col-md-3 inline-block">
+              <div class="row">
+                <div class="col-md-10 mx-auto">
+                  <div class="row">
+                    <select class="form-control" name="nivel" id="nivel" (change)="updateFilter($event,2)">
+                      <option value="" selected disabled>Selecciona...</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                    </select>
+                    <small class="mx-auto">
+                      Nivel
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="input-group ">
+                <span class="input-group-prepend">
+                  <button type="button" class="btn btn-primary"><i class="fa fa-search"></i>Buscar</button>
+                </span>
+                <!-- <input type="text" id="input1-group2" (keyup)='updateFilter($event)' name="input1-group2" class="form-control"
+                  placeholder="Email"> -->
+                <input type="text" id="input1-group2" name="input1-group2" class="form-control" placeholder="Email"
+                  (keyup)="updateFilter($event,3)">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <!-- <button type="button" class="btn btn-block btn-primary" data-toggle="modal" (click)="successModal.show()">Nuevo</button> -->
+              <button type="button" class="btn btn-block btn-primary" data-toggle="modal"
+                (click)="successModal.show()">Nuevo</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <ngx-datatable #myTable class='material expandable' [columnMode]="'flex'" [headerHeight]="50" [footerHeight]="50"
+        [rowHeight]="'auto'" [rows]='alumnos' (page)="onPage($event)" [limit]="10" [messages]="messages">
+
+        <ngx-datatable-column name="Matrícula" prop="cdMatricula" [flexGrow]="0.8">
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            <span class="mobile-hidden">{{value}}</span>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Nombre" prop="firstName" [flexGrow]="1.3">
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            <span class="mobile-hidden">{{value}}</span>
+          </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="Apellido Paterno" prop="surName" [flexGrow]="1.1">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            <span class="mobile-hidden">{{value}}</span>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Apellido Materno" prop="lastName" [flexGrow]="1.1">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            <span class="mobile-hidden">{{value}}</span>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Licenciatura" class="text-center" prop="cdLic" [flexGrow]="1.3">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            <span class="mobile-hidden" *ngIf="value==01">Enfermería</span>
+            <span class="mobile-hidden" *ngIf="value==02">Nutrición</span>
+            <span class="mobile-hidden" *ngIf="value==03">C. Empresariales</span>
+            <span class="mobile-hidden" *ngIf="value==04">Medicina</span>
+            <span class="mobile-hidden" *ngIf="value==05">Odontología</span>
+            <span class="mobile-hidden" *ngIf="value==06">Informática</span>
+            <span class="mobile-hidden" *ngIf="value==07">A. Municipales</span>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Nivel" prop="cdNivel" [flexGrow]="0.5">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            <span class="mobile-hidden">{{value}}</span>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Acciones" [flexGrow]="0.8" prop="cdMatricula">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            <button class="btn btn-xs btn-primary ml-1" (click)="update(value);successModal.show();">
+              <i class="fa fa-check"></i>
+            </button>
+            <button class="btn btn-xs btn-danger mr-1">
+              <i class="fa fa-close"></i>
+            </button>
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+    </div>
+  </div>
+</div>
+
+
+<div bsModal #successModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-success" role="document">
+      <form class="" #alumnForm="ngForm" [formGroup]="alumnoForm"
+      (ngSubmit)="saveAlumno(alumnoForm.value,successModal)">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Nuevo Alumno</h4>
+        <button type="button" class="close" (click)="successModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- <p>One fine body&hellip;</p> -->
+        <!-- <form class="" #alumnoForm="ngForm" [formGroup]="alumnoForm"
+        (ngSubmit)="saveAlumno(alumnoForm.value,successModal)"> -->
+          
+          <div class="form-group">
+            <label class="form-col-form-label" for="matricula">Matrícula</label>
+            <!-- <input type="text" class="form-control" id="matricula"> -->
+            <input type="text" class="form-control" id="cdMatricula" [formControl]="alumnoForm.controls['cdMatricula']"
+              [readonly]="swUpdate"
+              [ngClass]=" !alumnoForm.controls['cdMatricula'].hasError('minlength') && !alumnoForm.controls['cdMatricula'].hasError('required') && !alumnoForm.controls['cdMatricula'].hasError('maxlength')  ? 'is-valid' : 'is-invalid' ">
+            <div class="valid-feedback">
+              Ok.
+            </div>
+            <div class="invalid-feedback">
+              <span
+                *ngIf="alumnoForm.controls['cdMatricula'].hasError('required') && alumnoForm.controls['cdMatricula'].touched">Valor
+                requerido.</span>
+              <span
+                *ngIf="(alumnoForm.controls['cdMatricula'].hasError('minLength') && alumnoForm.controls['cdMatricula'].hasError('maxLength')) && alumnoForm.controls['cdMatricula'].touched">Formato
+                incorrecto.</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-col-form-label" for="name">Nombre</label>
+            <input type="text" class="form-control" id="name" [formControl]="alumnoForm.controls['firstName']"
+              [ngClass]=" !alumnoForm.controls['firstName'].hasError('required') && !alumnoForm.controls['firstName'].hasError('pattern')  ? 'is-valid' : 'is-invalid' ">
+            <div class="valid-feedback">
+              Ok.
+            </div>
+            <div class="invalid-feedback">
+              <span
+                *ngIf="alumnoForm.controls['firstName'].hasError('required') && alumnoForm.controls['firstName'].touched">Valor
+                requerido.</span>
+              <span
+                *ngIf="alumnoForm.controls['firstName'].hasError('pattern') && alumnoForm.controls['firstName'].touched">Formato
+                incorrecto.</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-col-form-label" for="appat">Apellido Paterno</label>
+            <input type="text" class="form-control" id="appat" [formControl]="alumnoForm.controls['surName']"
+              [ngClass]=" !alumnoForm.controls['surName'].hasError('required') && !alumnoForm.controls['surName'].hasError('pattern')  ? 'is-valid' : 'is-invalid' ">
+            <div class="valid-feedback">
+              Ok.
+            </div>
+            <div class="invalid-feedback">
+              <span
+                *ngIf="alumnoForm.controls['surName'].hasError('required') && alumnoForm.controls['surName'].touched">Valor
+                requerido.</span>
+              <span
+                *ngIf="alumnoForm.controls['surName'].hasError('pattern') && alumnoForm.controls['surName'].touched">Formato
+                incorrecto.</span>
+            </div>
+
+          </div>
+          <div class="form-group">
+            <label class="form-col-form-label" for="apmat">Apellido Materno</label>
+            <input type="text" class="form-control" id="apmat" [formControl]="alumnoForm.controls['lastName']"
+              [ngClass]=" !alumnoForm.controls['lastName'].hasError('pattern') && !alumnoForm.controls['lastName'].hasError('required')  ? 'is-valid' : 'is-invalid' ">
+            <div class="valid-feedback">
+              Ok.
+            </div>
+            <div class="invalid-feedback">
+              <span
+                *ngIf="alumnoForm.controls['lastName'].hasError('required') && alumnoForm.controls['lastName'].touched">Valor
+                requerido.</span>
+              <span
+                *ngIf="alumnoForm.controls['lastName'].hasError('pattern') && alumnoForm.controls['lastName'].touched">Formato
+                incorrecto.</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-col-form-label" for="licenciatura">Licenciatura</label>
+            <select class="form-control" name="nivel" id="licenciatura" [formControl]="alumnoForm.controls['cdLic']"
+              placeholder="Seleccione..."
+              [ngClass]="!alumnoForm.controls['cdLic'].hasError('required') ? 'is-valid': 'is-invalid'">
+              <option value="01">Enfermería</option>
+              <option value="02">Nutrición</option>
+              <option value="03">Ciencias Empresariales</option>
+              <option value="04">Medicina</option>
+              <option value="05">Odontología</option>
+              <option value="06">Informática</option>
+              <option value="07">Administración Municipal</option>
+            </select>
+            <div class="valid-feedback">
+              Ok.
+            </div>
+            <div class="invalid-feedback">
+              <span
+                *ngIf="alumnoForm.controls['cdLic'].hasError('required') && alumnoForm.controls['cdLic'].touched">Valor
+                requerido.</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-col-form-label" for="nivel">Nivel</label>
+            <select class="form-control" name="nivel" id="nivel" [formControl]="alumnoForm.controls['cdNivel']"
+              placeholder="Seleccione..."
+              [ngClass]="!alumnoForm.controls['cdNivel'].hasError('required') ? 'is-valid': 'is-invalid'">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
+            <div class="valid-feedback">
+              Ok.
+            </div>
+            <div class="invalid-feedback">
+              <span
+                *ngIf="alumnoForm.controls['cdNivel'].hasError('required') && alumnoForm.controls['cdNivel'].touched">Valor
+                requerido.</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-col-form-label" for="rol">Estatus</label>
+            <select id="estatus" name="estatus" class="form-control" placeholder="Seleccione..."
+              [formControl]="alumnoForm.controls['swActive']"
+              [ngClass]="!alumnoForm.controls['swActive'].hasError('required')  ? 'is-valid' : 'is-invalid' ">
+              <option value="S">Activo</option>
+              <option value="N">Inactivo</option>
+            </select>
+            <div class="valid-feedback">
+              Ok.
+            </div>
+            <div class="invalid-feedback">
+              <span
+                *ngIf="alumnoForm.controls['swActive'].hasError('required') && alumnoForm.controls['swActive'].touched">Valor
+                requerido.</span>
+            </div>
+          </div>
+          <alert type="danger" *ngIf="existAlumno">
+              <strong>Error!:</strong> El alumno con la matrícula registrada ya existe.
+            </alert>
+      </div>
+
+      <div class="modal-footer">
+          
+        <button type="button" class="btn btn-secondary" (click)="successModal.hide()">Cancelar</button>
+        <button type="submit" class="btn btn-success">Guardar</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </form>
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

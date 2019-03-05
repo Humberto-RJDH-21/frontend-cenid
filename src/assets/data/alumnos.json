@@ -1,0 +1,326 @@
+[
+  {
+    "cdMatricula": "2014060202",
+    "firstName": "HUMBERTO",
+    "surName": "RAMIREZ",
+    "lastName": "JUAREZ",
+    "cdLic": "01",
+    "swActive": "S",
+    "cdNivel": "1"
+  },
+  {
+    "cdMatricula": "2014060203",
+    "firstName": "GABRIELA",
+    "surName": "PADILLA",
+    "lastName": "BUSTAMANTE",
+    "cdLic": "01",
+    "swActive": "S",
+    "cdNivel": "3"
+  },
+  {
+    "cdMatricula": "2014060204",
+    "firstName": "LUIS",
+    "surName": "GARCÍA",
+    "lastName": "GARCÍA",
+    "cdLic": "01",
+    "swActive": "S",
+    "cdNivel": "6"
+  },
+  {
+    "cdMatricula": "2014060205",
+    "firstName": "MICHELLE",
+    "surName": "PACHECO",
+    "lastName": "CORTÉS",
+    "cdLic": "01",
+    "swActive": "S",
+    "cdNivel": "1"
+  },
+  {
+    "cdMatricula": "2014060206",
+    "firstName": "HUMBERTO",
+    "surName": "RAMIREZ",
+    "lastName": "JUAREZ",
+    "cdLic": "02",
+    "swActive": "S",
+    "cdNivel": "3"
+  },
+  {
+    "cdMatricula": "2014060207",
+    "firstName": "GABRIELA",
+    "surName": "PADILLA",
+    "lastName": "BUSTAMANTE",
+    "cdLic": "02",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060210",
+    "firstName": "LUIS",
+    "surName": "GARCÍA",
+    "lastName": "GARCÍA",
+    "cdLic": "02",
+    "swActive": "S",
+    "cdNivel": "6"
+  },
+  {
+    "cdMatricula": "2014060211",
+    "firstName": "MICHELLE",
+    "surName": "PACHECO",
+    "lastName": "CORTÉS",
+    "cdLic": "02",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060212",
+    "firstName": "HUMBERTO",
+    "surName": "RAMIREZ",
+    "lastName": "JUAREZ",
+    "cdLic": "02",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060213",
+    "firstName": "GABRIELA",
+    "surName": "PADILLA",
+    "lastName": "BUSTAMANTE",
+    "cdLic": "02",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060214",
+    "firstName": "LUIS",
+    "surName": "GARCÍA",
+    "lastName": "GARCÍA",
+    "cdLic": "02",
+    "swActive": "S",
+    "cdNivel": "4"
+  },
+  {
+    "cdMatricula": "2014060215",
+    "firstName": "MICHELLE",
+    "surName": "PACHECO",
+    "lastName": "CORTÉS",
+    "cdLic": "02",
+    "swActive": "S",
+    "cdNivel": "4"
+  },
+  {
+    "cdMatricula": "2014060222",
+    "firstName": "HUMBERTO",
+    "surName": "RAMIREZ",
+    "lastName": "JUAREZ",
+    "cdLic": "03",
+    "swActive": "S",
+    "cdNivel": "4"
+  },
+  {
+    "cdMatricula": "2014060223",
+    "firstName": "GABRIELA",
+    "surName": "PADILLA",
+    "lastName": "BUSTAMANTE",
+    "cdLic": "03",
+    "swActive": "S",
+    "cdNivel": "2"
+  },
+  {
+    "cdMatricula": "2014060224",
+    "firstName": "LUIS",
+    "surName": "GARCÍA",
+    "lastName": "GARCÍA",
+    "cdLic": "07",
+    "swActive": "S",
+    "cdNivel": "3"
+  },
+  {
+    "cdMatricula": "2014060225",
+    "firstName": "MICHELLE",
+    "surName": "PACHECO",
+    "lastName": "CORTÉS",
+    "cdLic": "05",
+    "swActive": "S",
+    "cdNivel": "5"
+  },
+  {
+    "cdMatricula": "2014060232",
+    "firstName": "HUMBERTO",
+    "surName": "RAMIREZ",
+    "lastName": "JUAREZ",
+    "cdLic": "04",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060233",
+    "firstName": "GABRIELA",
+    "surName": "PADILLA",
+    "lastName": "BUSTAMANTE",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060234",
+    "firstName": "LUIS",
+    "surName": "GARCÍA",
+    "lastName": "GARCÍA",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "1"
+  },
+  {
+    "cdMatricula": "2014060235",
+    "firstName": "MICHELLE",
+    "surName": "PACHECO",
+    "lastName": "CORTÉS",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "1"
+  },
+  {
+    "cdMatricula": "2014060242",
+    "firstName": "HUMBERTO",
+    "surName": "RAMIREZ",
+    "lastName": "JUAREZ",
+    "cdLic": "07",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060243",
+    "firstName": "GABRIELA",
+    "surName": "PADILLA",
+    "lastName": "BUSTAMANTE",
+    "cdLic": "01",
+    "swActive": "S",
+    "cdNivel": "5"
+  },
+  {
+    "cdMatricula": "2014060244",
+    "firstName": "LUIS",
+    "surName": "GARCÍA",
+    "lastName": "GARCÍA",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060245",
+    "firstName": "MICHELLE",
+    "surName": "PACHECO",
+    "lastName": "CORTÉS",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060252",
+    "firstName": "HUMBERTO",
+    "surName": "RAMIREZ",
+    "lastName": "JUAREZ",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060253",
+    "firstName": "GABRIELA",
+    "surName": "PADILLA",
+    "lastName": "BUSTAMANTE",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060254",
+    "firstName": "LUIS",
+    "surName": "GARCÍA",
+    "lastName": "GARCÍA",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060255",
+    "firstName": "MICHELLE",
+    "surName": "PACHECO",
+    "lastName": "CORTÉS",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060262",
+    "firstName": "HUMBERTO",
+    "surName": "RAMIREZ",
+    "lastName": "JUAREZ",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060263",
+    "firstName": "GABRIELA",
+    "surName": "PADILLA",
+    "lastName": "BUSTAMANTE",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060264",
+    "firstName": "LUIS",
+    "surName": "GARCÍA",
+    "lastName": "GARCÍA",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060265",
+    "firstName": "MICHELLE",
+    "surName": "PACHECO",
+    "lastName": "CORTÉS",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060272",
+    "firstName": "HUMBERTO",
+    "surName": "RAMIREZ",
+    "lastName": "JUAREZ",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060273",
+    "firstName": "GABRIELA",
+    "surName": "PADILLA",
+    "lastName": "BUSTAMANTE",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060274",
+    "firstName": "LUIS",
+    "surName": "GARCÍA",
+    "lastName": "GARCÍA",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "7"
+  },
+  {
+    "cdMatricula": "2014060275",
+    "firstName": "MICHELLE",
+    "surName": "PACHECO",
+    "lastName": "CORTÉS",
+    "cdLic": "06",
+    "swActive": "S",
+    "cdNivel": "7"
+  }
+]

@@ -1,0 +1,227 @@
+<div class="col-lg-12">
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col">
+          <i class="fa fa-align-justify"></i> Personal
+        </div>
+        <div class="col">
+          <div class="form-group row">
+            <div class="col-md-9">
+              <div class="input-group">
+                <span class="input-group-prepend">
+                  <button type="button" class="btn btn-primary"><i class="fa fa-search"></i>Buscar</button>
+                </span>
+                <input type="text" id="input1-group2" (keyup)='updateFilter($event)' name="input1-group2"
+                  class="form-control" placeholder="Email">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn btn-block btn-primary" data-toggle="modal"
+                (click)="successModal.show()">Nuevo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- [columnMode]="'flex'"  -->
+    <div class="card-body">
+      <ngx-datatable #myTable 
+      class='material expandable' 
+      
+      [headerHeight]="50" 
+      [footerHeight]="50"
+      [rowHeight]="'auto'" 
+      [rows]='personal' 
+      (page)="onPage($event)" 
+      [limit]="10" 
+      [messages]="messages"
+      [columnMode]="'flex'"
+      [reorderable]="reorderable"
+        [swapColumns]="swapColumns"
+          >
+        <ngx-datatable-column flex name="Email" prop="cdEmail" [flexGrow]="2">
+          <ng-template let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+            {{value}}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Nombre" prop="firstName" [flexGrow]="1.5">
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            <span class="mobile-hidden">{{value}}</span>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Apellido Paterno" prop="surName" [flexGrow]="1.2">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            <span class="mobile-hidden">{{value}}</span>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Apellido Materno" prop="lastName" [flexGrow]="1.2">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            <span class="mobile-hidden">{{value}}</span>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Rol" prop="dsType" [flexGrow]="1">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            <span class="mobile-hidden" *ngIf="value=='0'">ADMIN</span>
+            <span class="mobile-hidden" *ngIf="value=='1'">Profesor</span>
+            <span class="mobile-hidden" *ngIf="value=='2'">Secretari@</span>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Estatus" class="text-center" prop="swActive" [flexGrow]="0.8">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            <div class="text-left">
+              <span class="badge badge-success" *ngIf="value=='S'">Activo</span>
+              <span class="badge badge-danger" *ngIf="value=='N'">Inactivo</span>
+            </div>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Acciones" [flexGrow]="0.8" prop="cdEmail">
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            <button class="btn btn-xs btn-primary ml-1" (click)="update(value);successModal.show();">
+              <i class="fa fa-pencil"></i>
+            </button>
+            <button class="btn btn-xs btn-danger mr-1" (click)="drop(value)">
+              <i class="fa fa-close"></i>
+            </button>
+          </ng-template>
+        </ngx-datatable-column>       
+      </ngx-datatable>
+    </div>
+  </div>
+</div>
+
+
+<div bsModal #successModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-success" role="document">
+    <form #personForm="ngForm" [formGroup]="personalForm"
+      (ngSubmit)="savePersonal(personalForm.value,successModal)">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Nuevo Personal</h4>
+          <button type="button" class="close" (click)="successModal.hide()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- <p>One fine body&hellip;</p> -->
+
+          <div class="form-group">
+            <label class="form-col-form-label" for="mail">Usuario</label>
+            <input type="email" class="form-control" id="mail" [formControl]="personalForm.controls['cdEmail']"
+              [readonly]="swUpdate"
+              [ngClass]=" !personalForm.controls['cdEmail'].hasError('email') && !personalForm.controls['cdEmail'].hasError('required')  ? 'is-valid' : 'is-invalid' ">
+            <div class="valid-feedback">
+              Ok.
+            </div>
+            <div class="invalid-feedback">
+              <span
+                *ngIf="personalForm.controls['cdEmail'].hasError('required') && personalForm.controls['cdEmail'].touched"
+                 >Valor requerido.</span>
+              <span
+                *ngIf="personalForm.controls['cdEmail'].hasError('email') && personalForm.controls['cdEmail'].touched"
+                >Formato incorrecto.</span>
+            </div>            
+          </div>
+          <div class="form-group">
+            <label class="form-col-form-label" for="name">Nombre</label>
+            <input type="text" class="form-control" id="name" 
+              [formControl]="personalForm.controls['firstName']"
+              [ngClass]=" !personalForm.controls['firstName'].hasError('required') && !personalForm.controls['firstName'].hasError('pattern')  ? 'is-valid' : 'is-invalid' ">
+              <div class="valid-feedback">
+                Ok.
+              </div>
+              <div class="invalid-feedback">
+                <span
+                  *ngIf="personalForm.controls['firstName'].hasError('required') && personalForm.controls['firstName'].touched"
+                   >Valor requerido.</span>
+                <span
+                  *ngIf="personalForm.controls['firstName'].hasError('pattern') && personalForm.controls['firstName'].touched"
+                  >Formato incorrecto.</span>
+              </div>
+          </div>
+          <div class="form-group">
+            <label class="form-col-form-label" for="appat">Apellido Paterno</label>
+            <input type="text" class="form-control" id="appat" 
+              [formControl]="personalForm.controls['surName']"
+              [ngClass]=" !personalForm.controls['surName'].hasError('required') && !personalForm.controls['surName'].hasError('pattern')  ? 'is-valid' : 'is-invalid' ">
+              <div class="valid-feedback">
+                Ok.
+              </div>
+              <div class="invalid-feedback">
+                <span
+                  *ngIf="personalForm.controls['surName'].hasError('required') && personalForm.controls['surName'].touched"
+                   >Valor requerido.</span>
+                <span
+                  *ngIf="personalForm.controls['surName'].hasError('pattern') && personalForm.controls['surName'].touched"
+                  >Formato incorrecto.</span>
+              </div>  
+          </div>
+          <div class="form-group">
+            <label class="form-col-form-label" for="apmat">Apellido Materno</label>
+            <input type="text" class="form-control" id="apmat" 
+              [formControl]="personalForm.controls['lastName']"
+              [ngClass]=" !personalForm.controls['lastName'].hasError('pattern') && !personalForm.controls['lastName'].hasError('required')  ? 'is-valid' : 'is-invalid' ">
+              <div class="valid-feedback">
+                Ok.
+              </div>
+              <div class="invalid-feedback">
+                <span
+                  *ngIf="personalForm.controls['lastName'].hasError('required') && personalForm.controls['lastName'].touched"
+                   >Valor requerido.</span>
+                <span
+                  *ngIf="personalForm.controls['lastName'].hasError('pattern') && personalForm.controls['lastName'].touched"
+                  >Formato incorrecto.</span>
+              </div>  
+          </div>
+          <div class="form-group">
+            <!-- <label class="col-md-3 col-form-label" for="select1">Select</label> -->
+            <label class="form-col-form-label" for="rol">Rol</label>
+            <select id="rol" name="rol" class="form-control" placeholder="Seleccione..."
+              [formControl]="personalForm.controls['dsType']" 
+              [ngClass]=" !personalForm.controls['dsType'].hasError('required') ? 'is-valid' : 'is-invalid' ">
+              <option value="0">Administrador</option>
+              <option value="1">Profesor</option>
+              <option value="2">Secretaria</option>
+              <!-- <option value="3">Invitado</option> -->
+            </select>
+            <div class="valid-feedback">
+              Ok.
+            </div>
+            <div class="invalid-feedback">
+              <span
+                *ngIf="personalForm.controls['dsType'].hasError('required') && personalForm.controls['dsType'].touched"
+                 >Valor requerido.</span>              
+            </div>  
+
+          </div>
+          <div class="form-group">
+            <label class="form-col-form-label" for="rol">Estatus</label>
+            <select id="estatus" name="estatus" class="form-control" placeholder="Seleccione..."
+              [formControl]="personalForm.controls['swActive']" 
+              [ngClass]="!personalForm.controls['swActive'].hasError('required')  ? 'is-valid' : 'is-invalid' ">
+              <option value="S">Activo</option>
+              <option value="N">Inactivo</option>
+            </select>
+            <div class="valid-feedback">
+              Ok.
+            </div>
+            <div class="invalid-feedback">
+              <span
+                *ngIf="personalForm.controls['swActive'].hasError('required') && personalForm.controls['swActive'].touched"
+                 >Valor requerido.</span>              
+            </div>  
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="successModal.hide()">Cancelar</button>
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+
+      </div><!-- /.modal-content -->
+    </form>
+  </div><!-- /.modal-dialog -->
+
+</div><!-- /.modal -->
